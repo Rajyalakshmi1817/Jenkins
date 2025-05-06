@@ -1,7 +1,7 @@
 node('slave-1') {
-    def ACCOUNT_ID = "851271747310"
-    def REGION = "us-east-2"
-    def GIT_URL = "https://github.com/naveen-uppala/customer.git"
+    def ACCOUNT_ID = "156041426007"
+    def REGION = "us-east-1"
+    def GIT_URL = "https://github.com/Rajyalakshmi1817/customer.git"
     def BRANCH  =  "main"
     def IMAGE_NAME = "customer"
     def IMAGE_TAG = "${currentBuild.number}"
@@ -14,7 +14,7 @@ node('slave-1') {
         }
 
         stage("Sonar Qube Scan") {
-            sh "mvn clean verify sonar:sonar -Dsonar.token=${SONAR_TOKEN} -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=tcn -Dsonar.projectKey=tcn_customer"
+            sh "mvn clean verify sonar:sonar -Dsonar.token=${SONAR_TOKEN} -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=rjr -Dsonar.projectKey=rjr_customer"
         }
 
         stage("Build docker image") {
