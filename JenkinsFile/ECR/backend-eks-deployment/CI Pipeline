@@ -1,4 +1,4 @@
-node('slave-1') {
+node('Slave-1') {
     def ACCOUNT_ID = "156041426007"
     def REGION = "us-east-1"
     def GIT_URL = "https://github.com/Rajyalakshmi1817/customer.git"
