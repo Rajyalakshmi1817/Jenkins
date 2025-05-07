@@ -1,12 +1,12 @@
-node('slave-1')
+node('Slave-1')
 {
-    def AWS_ACCOUNT_ID="851271747310"
-    def AWS_REGION="us-east-2"
+    def AWS_ACCOUNT_ID="156041426007"
+    def AWS_REGION="us-east-1"
     def IMAGE_NAME="customer"
     def REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${IMAGE_NAME}"
     def GIT_URL = "https://github.com/naveen-uppala/Infra-App-Deployment.git"
     def CHART_NAME ="customer"
-    def CLUSTER_NAME="batch18-eks-cluster"
+    def CLUSTER_NAME="Jekins_EKS_Master_Node"
 
 try {     
     stage('Obtain Build Number') {
