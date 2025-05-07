@@ -4,14 +4,14 @@ node('Slave-1')
     def AWS_REGION="us-east-1"
     def IMAGE_NAME="customer"
     def REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${IMAGE_NAME}"
-    def GIT_URL = "https://github.com/naveen-uppala/Infra-App-Deployment.git"
+    def GIT_URL = "https://github.com/Rajyalakshmi1817/Infra-App-Deployment.git"
     def CHART_NAME ="customer"
     def CLUSTER_NAME="Jekins_EKS_Master_Node"
 
 try {     
     stage('Obtain Build Number') {
         withCredentials([usernamePassword(credentialsId: 'jenkins_credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            def buildNumber = sh(script: "curl -s -u ${USERNAME}:${PASSWORD} 'http://3.17.191.79:8080/job/HPM_CI/job/customer/lastSuccessfulBuild/buildNumber'", returnStdout: true).trim()
+            def buildNumber = sh(script: "curl -s -u ${USERNAME}:${PASSWORD} 'http://52.6.205.37:8080//job/HPM_CI/job/customer/lastSuccessfulBuild/buildNumber'", returnStdout: true).trim()
             env.buildNumber = buildNumber
             echo "The latest build number of HPM_CI is ${buildNumber}"
         }
