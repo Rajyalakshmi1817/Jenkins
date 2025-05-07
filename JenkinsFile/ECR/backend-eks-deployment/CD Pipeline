@@ -8,7 +8,7 @@ node('Slave-1')
     def CHART_NAME ="customer"
     def CLUSTER_NAME="Jekins_EKS_Master_Node"
 
-try {     
+//try {     
     stage('Obtain Build Number') {
         withCredentials([usernamePassword(credentialsId: 'jenkins_credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             def buildNumber = sh(script: "curl -s -u ${USERNAME}:${PASSWORD} 'http://52.6.205.37:8080//job/HPM_CI/job/customer/lastSuccessfulBuild/buildNumber'", returnStdout: true).trim()
